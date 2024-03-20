@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "scheme": "s13-26-react-native",
+    "userInterfaceStyle": "automatic",
+    "orientation": "default",
+    "web": {
+      "output": "single",
+      "bundler": "metro"
+    },
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "backgroundColor": "white"
+    },
+    "notification": {
+      "icon": "./src/assets/icons/logo.png",
+      "color": "#C4EADF"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://n"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./src/assets/icons/logo.png",
+          "color": "#C4EADF",
+          "sounds": ["./src/assets/resources/tone.wav"]
+        }
+      ]
+    ],
+    "name": "s13-26-react-native",
+    "slug": "welltechapp",
+    "extra": {
+      "router": {
+        "origin": "https://n"
+      },
+      "eas": {
+        "projectId": "338b9e1b-3826-4747-a2eb-283fc73753bd"
+      }
+    },
+    "owner": "s13-26-react-native"
+  }
+}
