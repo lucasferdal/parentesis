@@ -1,6 +1,6 @@
 {
   "expo": {
-    "scheme": "s13-26-react-native",
+    "scheme": "client",
     "userInterfaceStyle": "automatic",
     "orientation": "default",
     "web": {
@@ -27,20 +27,25 @@
         {
           "icon": "./src/assets/icons/logo.png",
           "color": "#C4EADF",
-          "sounds": ["./src/assets/resources/tone.wav"]
+          "sounds": [
+            "./src/assets/resources/tone.wav"
+          ]
         }
       ]
     ],
-    "name": "s13-26-react-native",
-    "slug": "welltechapp",
+    "name": "client",
+    "slug": "parentesis",
     "extra": {
       "router": {
         "origin": "https://n"
       },
       "eas": {
-        "projectId": "338b9e1b-3826-4747-a2eb-283fc73753bd"
+        "projectId": "5b5ff4f2-9471-457e-a3e4-0ec90831e03a"
       }
     },
-    "owner": "s13-26-react-native"
+    "owner": "lucasferdal",
+    "android": {
+      "package": "com.lucasferdal.parentesis"
+    }
   }
 }
