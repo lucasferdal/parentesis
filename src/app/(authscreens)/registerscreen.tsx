@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     marginBottom: 20,
   },
   botonDesactivado: { backgroundColor: '#646F77' },
