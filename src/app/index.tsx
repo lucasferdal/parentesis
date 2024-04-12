@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { ActivityIndicator } from 'react-native';
-import { Redirect, useRootNavigationState } from 'expo-router';
-import { InitialLayout } from './(initialLogin)/_layout';
+import { View, Text } from 'react-native';
 
 export default function Page() {
-  const [logged, setLogged] = useState(true);
+  return (
+    <View>
+      <Text>Hola</Text>
+    </View>
+  )
 
-  const rootNavigationState = useRootNavigationState();
-
-  if (!rootNavigationState?.key) return <ActivityIndicator color={'#67397E'} size={'large'} />;
-
-  if (logged) return <Redirect href={'homeScreen'}></Redirect>;
-  return <Redirect href={'loginscreen'}></Redirect>;
 }
