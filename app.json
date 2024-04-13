@@ -9,7 +9,8 @@
     },
     "splash": {
       "image": "./src/assets/splash.png",
-      "backgroundColor": "white"
+      "resizeMode": "contain",
+      "backgroundColor": "ffffff"
     },
     "notification": {
       "icon": "./src/assets/icons/logo.png",
