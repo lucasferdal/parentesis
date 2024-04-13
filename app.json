@@ -13,7 +13,7 @@
     },
     "notification": {
       "icon": "./src/assets/icons/logo.png",
-      "color": "#C4EADF"
+      "color": "#ffffff"
     },
     "plugins": [
       [
@@ -26,7 +26,7 @@
         "expo-notifications",
         {
           "icon": "./src/assets/icons/logo.png",
-          "color": "#C4EADF",
+          "color": "#ffffff",
           "sounds": [
             "./src/assets/resources/tone.wav"
           ]
