@@ -1,2 +1,2 @@
-// export { Horarios } from './Horarios'
-// export { AgregarHorarios } from './AgregarHorarios'
+export { Horarios } from './Horarios'
+export { AgregarHorarios } from './AgregarHorarios'
