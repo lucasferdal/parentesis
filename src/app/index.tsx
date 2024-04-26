@@ -12,6 +12,5 @@ export default function Page() {
 
   if (logged) return <Redirect href={'homeScreen'}></Redirect>;
   return <Redirect href={'loginscreen'}></Redirect>;
-  )
 
 }
