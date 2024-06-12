@@ -32,7 +32,8 @@
             "./src/assets/resources/tone.wav"
           ]
         }
-      ]
+      ],
+      "expo-font"
     ],
     "name": "client",
     "slug": "parentesis",

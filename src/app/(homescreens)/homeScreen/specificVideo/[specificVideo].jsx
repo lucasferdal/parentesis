@@ -1,18 +1,20 @@
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
 import { useLocalSearchParams } from 'expo-router';
-import { sumarMedalla } from '@/services/MedalsServices';
+import { sumarMedalla } from '../../../../services/MedalsServices';
 import Count from '@/ui/Count';
 
 function SpecificVideo() {
+
+
   const specificVideo = useLocalSearchParams();
-const dutation:number =+specificVideo.duracion
+  const duration = +specificVideo.duracion
   return (
     <View style={style.container}>
       <View style={style.containerTitle}>
         <Text
           style={{
-            fontFamily: 'montserrat_semibold',
+            // fontFamily: 'montserrat_semibold',
             fontSize: 18,
             textAlign: 'center',
           }}
@@ -31,7 +33,10 @@ const dutation:number =+specificVideo.duracion
         />
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 4 }}>
           <MaterialCommunityIcons name="clock-time-five-outline" size={22} color="#09A4B7" />
-          <Text style={{ fontFamily: 'montserrat_regular', fontSize: 16 , color: '#09A4B7'}}>
+          <Text style={{
+            // fontFamily: 'montserrat_regular',
+            fontSize: 16, color: '#09A4B7'
+          }}>
             {specificVideo.duracion} s
           </Text>
         </View>
@@ -39,7 +44,7 @@ const dutation:number =+specificVideo.duracion
       <View style={style.containerDescription}>
         <Text
           style={{
-            fontFamily: 'montserrat_medium',
+            // fontFamily: 'montserrat_medium',
             fontSize: 14,
             textAlign: 'center',
             lineHeight: 26,
@@ -49,7 +54,7 @@ const dutation:number =+specificVideo.duracion
           {specificVideo.descripcion}
         </Text>
       </View>
-      <Count duration={dutation} />
+      <Count duration={duration} />
     </View>
   );
 }
@@ -61,9 +66,9 @@ const style = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    display: 'flex',    
-    backgroundColor: 'white', 
-    
+    display: 'flex',
+    backgroundColor: 'white',
+
 
   },
   containerTitle: {
@@ -90,5 +95,5 @@ const style = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 5,
   },
-   
+
 });

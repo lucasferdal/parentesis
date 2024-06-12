@@ -37,7 +37,7 @@ function OpcionHome({ text = 'Vacio', onClick = () => {} }) {
             numberOfLines={1}
             style={{
               textAlign: 'center',
-              fontFamily: 'montserrat_semibold',
+              // fontFamily: 'montserrat_semibold',
               fontSize: 16,
               color: 'black',
               paddingVertical: 14,

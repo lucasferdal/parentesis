@@ -195,23 +195,23 @@ const styles = StyleSheet.create({
     display: 'flex',
   },
   textgreet: {
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     fontSize: 20,
     color: '#102B3F',
   },
   textsupp: {
     paddingLeft: 25,
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     fontSize: 16,
     color: '#102B3F',
   },
   textprof: {
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     fontSize: 20,
     color: '#102B3F',
   },
   textemail: {
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     fontSize: 12,
     color: '#102B3F',
   },
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
   },
   profileComponentText: {
     color: '#646F77',
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     fontSize: 12,
   },
   profileComponentLogContainer: {
@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
   },
   modalText: {
     marginTop: 30,
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
     fontSize: 14,
     textAlign: 'justify',
   },

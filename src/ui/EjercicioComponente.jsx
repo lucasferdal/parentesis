@@ -40,7 +40,7 @@ function EjercicioComponente({ title = 'falta', duracion, url, onClick }) {
           >
             <Text
               style={{
-                fontFamily: 'montserrat_regular',
+                // fontFamily: 'montserrat_regular',
                 fontSize: 14,
               }}
             >

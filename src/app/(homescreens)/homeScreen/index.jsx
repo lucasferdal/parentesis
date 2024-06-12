@@ -35,12 +35,17 @@ function HomeScreen() {
       </View>
       <View style={style.statcontainer}>
         <Text style={style.textstat}>
-          ¡Llevas <Text style={{ fontFamily: 'montserrat_semibold' }}>{hours} horas</Text> frente a
+          ¡Llevas <Text style={{ 
+            // fontFamily: 'montserrat_semibold' 
+            }}>{hours} horas</Text> frente a
           la pantalla!
         </Text>
         <View style={{ display: 'flex', flexDirection: 'row', gap: 3, bottom: 14 }}>
           <Feather name="award" size={24} color={'#F78764'} style={{ alignSelf: 'flex-end' }} />
-          <Text style={{ fontFamily: 'montserrat_semibold', fontSize: 16, color: '#6F6E6E' }}>
+          <Text style={{ 
+            // fontFamily: 'montserrat_semibold',
+             fontSize: 16, color: '#6F6E6E' 
+             }}>
             {medallas}
           </Text>
         </View>
@@ -111,19 +116,19 @@ const style = StyleSheet.create({
   },
   textgreet: {
     textAlign: 'left',
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     fontSize: 16,
     color: '#102B3F',
   },
   textstat: {
     textAlign: 'left',
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
     fontSize: 13,
     color: '#646F77',
   },
   textquestion: {
     textAlign: 'left',
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
     fontSize: 13,
     marginBottom: 18,
     color: '#646F77',

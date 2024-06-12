@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
   diasText: {
     fontWeight: '500',
     color: '#102B3F',
-    fontFamily: 'montserrat_regular'
+    // fontFamily: 'montserrat_regular'
   },
   iconRow: {
     flexDirection: 'row',
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     color: '#102B3F',
     fontWeight: '400',
     fontSize: 14,
-    fontFamily: 'montserrat_regular'
+    // fontFamily: 'montserrat_regular'
   },
   bottomButtonContainer: {
     flex: 1,

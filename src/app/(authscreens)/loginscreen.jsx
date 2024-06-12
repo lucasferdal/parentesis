@@ -10,7 +10,7 @@ import {
   SafeAreaView,
   Image,
 } from 'react-native';
-import { Firebase_Auth } from '@/components/auth/FirebaseConfig';
+import { Firebase_Auth } from '../../components/auth/FirebaseConfig';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useRouter } from 'expo-router';
 import Boton from '../../ui/Boton';
@@ -18,8 +18,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import { Ionicons } from '@expo/vector-icons';
-import { logo, parentesis } from '@/assets/icons';
-
+import { logo, parentesis } from '../../assets/icons';
 
 const Auth = () => {
   const SigninSchema = Yup.object().shape({
@@ -37,9 +36,7 @@ const Auth = () => {
     try {
       const login = await signInWithEmailAndPassword(email, password);
       if (login) {
-        // setAuthRes(login);
         router.replace('homeScreen');
-        // alert('Sesión iniciada');
       } else {
         alert('Problemas al iniciar sesión: ' + error);
       }
@@ -179,12 +176,19 @@ const Auth = () => {
         <View
           style={{ display: 'flex', alignItems: 'center', flexDirection: 'row', marginTop: 25 }}
         >
-          <Text style={{ fontFamily: 'montserrat_regular', color: '#102B3F' }}>
+          <Text style={{
+            // fontFamily: 'montserrat_regular',
+            color: '#102B3F'
+          }}>
             ¿No tienes cuenta?{' '}
           </Text>
           <Link replace href={'/registerscreen'}>
             <Text
-              style={{ fontWeight: 'bold', fontFamily: 'montserrat_semibold', color: '#F78764' }}
+              style={{
+                fontWeight: 'bold',
+                // fontFamily: 'montserrat_semibold',
+                color: '#F78764'
+              }}
             >
               Crea tu cuenta
             </Text>
@@ -217,7 +221,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontWeight: 'bold',
     fontSize: 14,
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     color: '#09A4B7',
   },
   textInput: {
@@ -231,7 +235,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     color: '#8D6A9F',
     fontSize: 12,
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
   },
   textInputAct: {
     paddingTop: 10,
@@ -239,7 +243,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
   },
   mostrarContraseñaContenedor: {
     marginTop: 10,
@@ -252,7 +256,7 @@ const styles = StyleSheet.create({
   },
   mostrarContraseñaTexto: {
     fontSize: 12,
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
     color: '#102B3F',
   },
   mostrarContraseñaCheckBox: {
@@ -281,7 +285,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: '#F78764',
     borderColor: '#F78764',
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
     fontSize: 12,
   },
 });

@@ -9,15 +9,15 @@ export const unstable_settings = {
   initialRouteName: 'index',
 };
 
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
   ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
   const [loaded, error] = useFonts({
-    montserrat_light: require('../assets/fonts/montserrat_light.ttf'),
-    montserrat_medium: require('../assets/fonts/montserrat_medium.ttf'),
-    montserrat_regular: require('../assets/fonts/montserrat_regular.ttf'),
-    montserrat_semibold: require('../assets/fonts/montserrat_semibold.ttf'),
+    "montserrat_light": require('../assets/fonts/montserrat_light.ttf'),
+    "montserrat_medium": require('../assets/fonts/montserrat_medium.ttf'),
+    "montserrat_regular": require('../assets/fonts/montserrat_regular.ttf'),
+    "montserrat_semibold": require('../assets/fonts/montserrat_semibold.ttf'),
   });
 
   useEffect(() => {
@@ -29,6 +29,7 @@ export default function Layout() {
   }, [loaded]);
 
   if (!loaded) return null;
+
 
   return <Slot />;
 }

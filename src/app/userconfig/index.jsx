@@ -125,7 +125,7 @@ const UserConfig = () => {
             iconStyle={{ borderColor: '#102B3F', borderRadius: 4 }}
             innerIconStyle={{ borderWidth: 2, borderRadius: 4 }}
             textStyle={{
-              fontFamily: 'montserrat_regular',
+              // fontFamily: 'montserrat_regular',
               textDecorationLine: 'none',
               color: 'black',
             }}
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     marginBottom: 120,
     textAlign: 'center',
     color: '#102B3F',
@@ -177,12 +177,12 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     fontSize: 14,
     textAlign: 'center',
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
   },
   text1: {
     fontSize: 12,
     textAlign: 'center',
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
     color: 'white',
   },
   button1: {

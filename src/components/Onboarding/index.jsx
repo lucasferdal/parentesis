@@ -54,7 +54,10 @@ const Onboarding = () => {
           <Text style={styles.text}>
             No olvides activar las notificaciones para recibir recordatorios oportunos.
           </Text>
-          <Text style={[{ ...styles.text }, { fontFamily: 'montserrat_semibold' }]}>
+          <Text style={[{ ...styles.text },
+          {
+            // fontFamily: 'montserrat_semibold'
+          }]}>
             ¡Comienza ahora y haz un Paréntesis!
           </Text>
           <Boton onPress={handleNext} title="Siguiente" styles={styles.button1} />

@@ -81,7 +81,10 @@ export const AgregarHorarios = () => {
 
       <View style={styles.inputContainer}>
         <TouchableOpacity onPress={showStartTimePicker}>
-          <Text style={{ fontFamily: 'montserrat_regular', paddingLeft: 8 }}>Comienzo</Text>
+          <Text style={{
+            // fontFamily: 'montserrat_regular',
+            paddingLeft: 8
+          }}>Comienzo</Text>
           <View style={styles.input}>
             <FontAwesome5 name="clock" size={24} color="#09A4B7" />
             <TextInput value={selectedStartTime} editable={false} style={styles.textInput} />
@@ -99,7 +102,10 @@ export const AgregarHorarios = () => {
         )}
 
         <TouchableOpacity onPress={showEndTimePicker}>
-          <Text style={{ fontFamily: 'montserrat_regular', paddingLeft: 8 }}>Finalización</Text>
+          <Text style={{
+            // fontFamily: 'montserrat_regular',
+            paddingLeft: 8
+          }}>Finalización</Text>
           <View style={styles.input}>
             <FontAwesome5 name="clock" size={24} color="#09A4B7" />
             <TextInput value={selectedEndTime} editable={false} style={styles.textInput} />
@@ -253,6 +259,6 @@ const styles = StyleSheet.create({
     color: '#102B3F',
     fontWeight: 'bold',
     fontSize: 15,
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
   },
 });

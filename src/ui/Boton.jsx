@@ -1,17 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { Text, StyleSheet, Pressable, TouchableOpacity, Platform } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants';
 
-interface props {
-  onPress: () => any;
-  title: string;
-  styles?: any;
-  textStyles?: any;
-}
-
-export default function Boton(props: props) {
+export default function Boton(props) {
   const { onPress, title = 'Guardar' } = props;
   return (
     <TouchableOpacity style={[styles.button, props.styles ? props.styles : {}]} onPress={onPress}>
@@ -27,6 +20,7 @@ Notifications.setNotificationHandler({
     shouldSetBadge: false,
   }),
 });
+
 async function sendPushNotification(expoPushToken) {
   const message = {
     to: expoPushToken,
@@ -70,15 +64,15 @@ async function registerForPushNotificationsAsync() {
       alert('Failed to get push token for push notification!');
       return;
     }
-    token = await Notifications.getExpoPushTokenAsync({
+    token = (await Notifications.getExpoPushTokenAsync({
       projectId: Constants.expoConfig.extra.eas.projectId,
-    });
+    })).data;
     console.log(token);
   } else {
     alert('Must use physical device for Push Notifications');
   }
 
-  return token.data;
+  return token;
 }
 
 export const BotonNot = (props) => {
@@ -103,7 +97,6 @@ export const BotonNot = (props) => {
     };
   };
 
-  const { onPress, title = 'Guardar' } = props;
   return (
     <TouchableOpacity
       style={styles.button}
@@ -116,6 +109,7 @@ export const BotonNot = (props) => {
     </TouchableOpacity>
   );
 };
+
 const styles = StyleSheet.create({
   button: {
     height: 46,
@@ -127,7 +121,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#67397E',
   },
   text: {
-    fontFamily: 'montserrat_medium',
+    // fontFamily: 'montserrat_medium',
     fontSize: 16,
     lineHeight: 19.5,
     fontWeight: '600',

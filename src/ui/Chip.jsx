@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-export const Chip = ({ text, onPress }: { text: string; onPress?: () => void }) => {
+export const Chip = ({ text, onPress }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const handlePress = () => {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   chipText: {
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     fontSize: 22,
     fontWeight: 'bold',
   },

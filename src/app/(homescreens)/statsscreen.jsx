@@ -37,50 +37,50 @@ export default function StatsPage() {
   // }, []);
 
 
-useEffect(() => {
-  let unsubscribe;
+  useEffect(() => {
+    let unsubscribe;
 
-  const fetchData = async () => {
-    const querySnapshot = await UserData();
-    const userIds = querySnapshot.docs.map((doc) => doc.id);
-    const userId = userIds[0];
+    const fetchData = async () => {
+      const querySnapshot = await UserData();
+      const userIds = querySnapshot.docs.map((doc) => doc.id);
+      const userId = userIds[0];
 
-    unsubscribe = onSnapshot(doc(Firestore_Db, "users", userId), (doc) => {
-      setUserData(doc?.data());
-    });
-  };
+      unsubscribe = onSnapshot(doc(Firestore_Db, "users", userId), (doc) => {
+        setUserData(doc?.data());
+      });
+    };
 
-  fetchData();
+    fetchData();
 
-  return () => {
-    if (unsubscribe) {
-      unsubscribe();
+    return () => {
+      if (unsubscribe) {
+        unsubscribe();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (userData) {
+      setLoading(true);
+      const totalMedallas = userData?.totalMedallas;
+      const medallasPorFecha = userData?.medallas;
+
+      const medallasDiariasArray = Object.entries(medallasPorFecha).map(([fecha, cantidad]) => ({
+        fecha,
+        cantidad,
+      }));
+
+      medallasDiariasArray.sort((a, b) => {
+        const fechaA = new Date(a.fecha.split('/').reverse().join('-')).getTime();
+        const fechaB = new Date(b.fecha.split('/').reverse().join('-')).getTime();
+        return fechaA - fechaB;
+      });
+
+      setMedallas(totalMedallas);
+      setMedallasDiarias(medallasDiariasArray);
+      setLoading(false);
     }
-  };
-}, []);
-
-useEffect(() => {
-  if (userData) {
-    setLoading(true);
-    const totalMedallas = userData?.totalMedallas;
-    const medallasPorFecha = userData?.medallas;
-
-    const medallasDiariasArray = Object.entries(medallasPorFecha).map(([fecha, cantidad]) => ({
-      fecha,
-      cantidad,
-    }));
-
-    medallasDiariasArray.sort((a, b) => {
-      const fechaA = new Date(a.fecha.split('/').reverse().join('-')).getTime();
-      const fechaB = new Date(b.fecha.split('/').reverse().join('-')).getTime();
-      return fechaA - fechaB;
-    });
-
-    setMedallas(totalMedallas);
-    setMedallasDiarias(medallasDiariasArray);
-    setLoading(false);
-  }
-}, [userData]);
+  }, [userData]);
 
   const getWeekdayName = (fecha) => {
     const weekdays = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
@@ -104,12 +104,20 @@ useEffect(() => {
       <View style={styles.centerAlign}>
         <Feather name="award" size={25} color="#F78764" />
         <MyAppText style={styles.headerText}>Mi Progreso</MyAppText>
-        <MyAppText style={{color: '#102B3F', fontWeight: '400', fontFamily: 'montserrat_regular'}}>Por cada pausa que completes ganas 1 medalla.</MyAppText>
+        <MyAppText style={{
+          color: '#102B3F',
+          fontWeight: '400',
+          // fontFamily: 'montserrat_regular'
+        }}>Por cada pausa que completes ganas 1 medalla.</MyAppText>
       </View>
 
       <View style={styles.infoContainer}>
         <MyAppText style={styles.infoText}>Tienes {medallas} medallas</MyAppText>
-        <MyAppText style={{ marginTop: 8, color: 'white', fontFamily: 'montserrat_regular' }}>¡Vamos por más!</MyAppText>
+        <MyAppText style={{
+          marginTop: 8,
+          color: 'white',
+          // fontFamily: 'montserrat_regular'
+        }}>¡Vamos por más!</MyAppText>
       </View>
 
       <MyAppText style={[styles.headerText, { marginTop: 20 }]}>Mi progreso diario</MyAppText>
@@ -143,10 +151,16 @@ useEffect(() => {
           <View style={styles.todayContainer}>
             <MyAppText style={styles.todayText}>
               {selectedDay ? (
-                <MyAppText style={{fontFamily: 'montserrat_regular', fontWeight: '600'}}>
+                <MyAppText style={{
+                  // fontFamily: 'montserrat_regular',
+                  fontWeight: '600'
+                }}>
                   Hoy acumulaste{' '}
                   {
-                    <MyAppText style={{ fontWeight: 'bold', fontSize: 22 }}>
+                    <MyAppText style={{
+                      fontWeight: 'bold',
+                      fontSize: 22
+                    }}>
                       {selectedDay?.cantidad}
                     </MyAppText>
                   }{' '}
@@ -176,7 +190,7 @@ const styles = StyleSheet.create({
   },
   centerAlign: {
     alignItems: 'center',
-    
+
   },
   headerText: {
     fontSize: 20,
@@ -214,7 +228,7 @@ const styles = StyleSheet.create({
   },
   whiteText: {
     color: 'white',
-    fontFamily: 'montserrat_regular'
+    // fontFamily: 'montserrat_regular'
   },
   todayContainer: {
     backgroundColor: '#E1F4EF',
@@ -229,7 +243,7 @@ const styles = StyleSheet.create({
   todayText: {
     fontSize: 16,
     color: '#102B3F',
-    
+
   },
   bottomContainer: {
     position: 'absolute',

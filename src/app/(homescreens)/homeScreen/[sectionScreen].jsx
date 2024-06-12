@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { StyleSheet, View, Text, ScrollView, ActivityIndicator } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
-import EjercicioComponente from '@/ui/EjercicioComponente';
+import EjercicioComponente from '../../../ui/EjercicioComponente';
 import SpecificVideo from './specificVideo/[specificVideo]';
 
 import { collection, getDocs } from 'firebase/firestore';
-import { Firestore_Db as db } from '@/components/auth/FirebaseConfig';
+import { Firestore_Db as db } from '../../../components/auth/FirebaseConfig';
 
 function SectionScreen() {
-  const [data, setData] = useState<{ id: string;[key: string]: any }[]>([]);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { sectionScreen } = useLocalSearchParams();
   const router = useRouter();
@@ -41,14 +41,14 @@ function SectionScreen() {
           <FlashList
             data={data}
             renderItem={({ item }) => (
-                <EjercicioComponente
-                  title={item?.titulo}
-                  url={item?.url}
-                  duracion={item?.duracion}
-                  onClick={() =>
-                    router.push({ pathname: `/homeScreen/specificVideo/${item?.id}`, params: item })
-                  }
-                />
+              <EjercicioComponente
+                title={item?.titulo}
+                url={item?.url}
+                duracion={item?.duracion}
+                onClick={() =>
+                  router.push({ pathname: `/homeScreen/specificVideo/${item?.id}`, params: item })
+                }
+              />
             )}
             estimatedItemSize={111}
           />
@@ -64,12 +64,11 @@ const style = StyleSheet.create({
     paddingHorizontal: 16,
     flex: 1,
     display: 'flex',
-    backgroundColor: 'white', 
-
+    backgroundColor: 'white',
   },
   textgreet: {
     textAlign: 'left',
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     fontSize: 16,
     marginBottom: 25,
   },
@@ -81,7 +80,7 @@ const style = StyleSheet.create({
   loadingText: {
     marginTop: 10,
     fontSize: 16,
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
   },
 });
 

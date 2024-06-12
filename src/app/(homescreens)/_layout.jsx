@@ -9,7 +9,7 @@ export default function AppLayout() {
       screenOptions={{
         tabBarShowLabel: false,
         headerTitleStyle: {
-          fontFamily: 'montserrat_semibold',
+          // fontFamily: 'montserrat_semibold',
           fontSize: 16,
         },
         headerTitle: (props) => (

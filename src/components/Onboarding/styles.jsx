@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     color: '#102B3F',
     textAlign: 'center',
     marginTop: 30,
-    fontFamily: 'montserrat_regular',
+    // fontFamily: 'montserrat_regular',
     paddingHorizontal: 47,
   },
   button1: {

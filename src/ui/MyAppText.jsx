@@ -8,7 +8,7 @@ export const MyAppText = ({children, style}) => (
 
 const styles = StyleSheet.create({
     textStyles: {
-        fontFamily: 'montserrat_semibold',
+        // fontFamily: 'montserrat_semibold',
     }
 })
 

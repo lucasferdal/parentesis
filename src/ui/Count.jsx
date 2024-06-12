@@ -4,7 +4,7 @@ import { Entypo, Feather } from '@expo/vector-icons';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { sumarMedalla } from '@/services/MedalsServices';
 
-function Count({ duration }: { duration: number }) {
+function Count({ duration }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [complete, setComplete] = useState(false);
 
@@ -59,7 +59,7 @@ const style = StyleSheet.create({
     alignItems: 'center',
   },
   timerText: {
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     fontSize: 28.75,
     fontWeight: '600',
   },
@@ -78,7 +78,7 @@ const style = StyleSheet.create({
     fontSize: 22,
     textAlign: 'center',
     marginBottom: 10,
-    fontFamily: 'montserrat_semibold',
+    // fontFamily: 'montserrat_semibold',
     color: '#67397E'
   },
   iconContainer: {

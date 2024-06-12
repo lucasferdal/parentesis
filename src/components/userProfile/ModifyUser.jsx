@@ -4,7 +4,7 @@ import { Feather, FontAwesome } from '@expo/vector-icons';
 import { MyAppText } from '@/ui/MyAppText';
 import Boton from '@/ui/Boton';
 
-const InputComponent = ({ text, icon }: { text: string, icon: number }) => {
+const InputComponent = ({ text, icon }) => {
   const [inputValue, setInputValue] = useState('');
 
   return (
@@ -25,7 +25,12 @@ const InputComponent = ({ text, icon }: { text: string, icon: number }) => {
           />
         </View>
       </TouchableOpacity>
-      <MyAppText children={text} style={{ marginLeft: 50, color: '#646F77', fontWeight: '100' }} />
+      <MyAppText children={text} style={{
+        marginLeft: 50,
+        color: '#646F77',
+        ///
+        // fontWeight: '100' 
+      }} />
     </>
   );
 };
