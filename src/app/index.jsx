@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
-// import { Redirect, useRootNavigationState } from 'expo-router';
+import { Redirect, useRootNavigationState } from 'expo-router';
 
 export default function Page() {
   // const [logged, setLogged] = useState(true);
@@ -15,7 +15,7 @@ export default function Page() {
 
   return (
     <View>
-      <Text>Hola</Text>
+      return <Redirect href={'homeScreen'}></Redirect>
     </View>
   )
   
