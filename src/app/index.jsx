@@ -14,10 +14,8 @@ export default function Page() {
 
 
   return (
-    <View>
-      return <Redirect href={'homeScreen'}></Redirect>
-    </View>
+      <Redirect href={'loginscreen'}></Redirect>
   )
-  
+
 
 }
