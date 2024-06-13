@@ -9,174 +9,179 @@ import {
   ScrollView,
   TouchableWithoutFeedback,
 } from 'react-native';
-import { editpic } from '@/assets';
-import {
-  MaterialCommunityIcons,
-  MaterialIcons,
-  Feather,
-  Octicons,
-} from '@expo/vector-icons';
-import Boton from '@/ui/Boton';
-import { UserInformation } from '@/services/UserData';
+// import { editpic } from '@/assets';
+// import {
+//   MaterialCommunityIcons,
+//   MaterialIcons,
+//   Feather,
+//   Octicons,
+// } from '@expo/vector-icons';
+// import Boton from '@/ui/Boton';
+// import { UserInformation } from '@/services/UserData';
 
-import { ModifyUser } from '@/components/userProfile'
-import { useSignOut } from 'react-firebase-hooks/auth';
-import { useRouter } from 'expo-router';
-import { Firebase_Auth } from '@/components/auth/FirebaseConfig';
-import { Shadow } from 'react-native-shadow-2';
+// import { ModifyUser } from '@/components/userProfile'
+// import { useSignOut } from 'react-firebase-hooks/auth';
+// import { useRouter } from 'expo-router';
+// import { Firebase_Auth } from '@/components/auth/FirebaseConfig';
+// import { Shadow } from 'react-native-shadow-2';
 
 export default function ProfilePage() {
-  const [signOut] = useSignOut(Firebase_Auth);
-  const router = useRouter();
-  const [whichScreen, setWhichScreen] = useState(true);
+  return (
+    <View>
+      <Text>Profile</Text>
+    </View>
+  )
+  // const [signOut] = useSignOut(Firebase_Auth);
+  // const router = useRouter();
+  // const [whichScreen, setWhichScreen] = useState(true);
 
-  const [userData, setUserData] = useState({
-    username: '...',
-    email: '...',
-    age: 0
-  });
-  const [modalVisible, setModalVisible] = useState(false);
+  // const [userData, setUserData] = useState({
+  //   username: '...',
+  //   email: '...',
+  //   age: 0
+  // });
+  // const [modalVisible, setModalVisible] = useState(false);
 
-  useEffect(() => {
-    async function fetchUser() {
-      const user = await UserInformation();
-      const { name, email, edad } = user;
-      const spaceIndex = name?.indexOf(' ');
+  // useEffect(() => {
+  //   async function fetchUser() {
+  //     const user = await UserInformation();
+  //     const { name, email, edad } = user;
+  //     const spaceIndex = name?.indexOf(' ');
 
-      const username = spaceIndex !== -1 ? name?.substring(0, spaceIndex) : name;
-      setUserData({
-        username: username,
-        email: email,
-        age: edad
-      })
+  //     const username = spaceIndex !== -1 ? name?.substring(0, spaceIndex) : name;
+  //     setUserData({
+  //       username: username,
+  //       email: email,
+  //       age: edad
+  //     })
 
-    }
-    fetchUser();
-  }, []);
+  //   }
+  //   fetchUser();
+  // }, []);
 
-  const ProfileComponentLog = ({
-    text = 'Cerrar Sesión',
-    onClick = () => {
-      signOut
-      router.replace('loginscreen');
-    },
-  }) => {
-    return (
-      <View style={{ marginTop: 60, width: '80%', alignSelf: 'center' }}>
-        <Shadow distance={10} startColor={'#d0d0d0'} endColor={'#ffffff'} offset={[0, 3]} >
-          <TouchableOpacity
-            onPress={onClick}
-            style={styles.profileComponentContainer}
-          >
-            <Feather name="log-out" size={20} color="#67397E" />
-            <Text style={styles.profileComponentText}>{text}</Text>
-            <View style={{ flex: 1 }}>
-              <MaterialIcons name="arrow-forward-ios" size={30} color="#67397E" style={{ width: 30, left: '90%' }} />
-            </View>
-          </TouchableOpacity>
-        </Shadow>
-      </View>
-    );
+  // const ProfileComponentLog = ({
+  //   text = 'Cerrar Sesión',
+  //   onClick = () => {
+  //     signOut
+  //     router.replace('loginscreen');
+  //   },
+  // }) => {
+  //   return (
+  //     <View style={{ marginTop: 60, width: '80%', alignSelf: 'center' }}>
+  //       <Shadow distance={10} startColor={'#d0d0d0'} endColor={'#ffffff'} offset={[0, 3]} >
+  //         <TouchableOpacity
+  //           onPress={onClick}
+  //           style={styles.profileComponentContainer}
+  //         >
+  //           <Feather name="log-out" size={20} color="#67397E" />
+  //           <Text style={styles.profileComponentText}>{text}</Text>
+  //           <View style={{ flex: 1 }}>
+  //             <MaterialIcons name="arrow-forward-ios" size={30} color="#67397E" style={{ width: 30, left: '90%' }} />
+  //           </View>
+  //         </TouchableOpacity>
+  //       </Shadow>
+  //     </View>
+  //   );
   };
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.textcontainer}>
-        <Text style={styles.textgreet}>Mi Perfil</Text>
-      </View>
-      <View style={styles.profileInfoContainer}>
-        <View style={styles.profileImageContainer}>
-          <TouchableOpacity style={styles.editButton}>
-            <Image source={editpic} style={styles.editIcon} />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.profileTextContainer}>
-          <Text style={styles.textprof}>{userData?.username}, {userData?.age || 'Edad sin Definir'}</Text>
-          <Text style={styles.textemail}>{userData.email}</Text>
-        </View>
-      </View>
+//   return (
+//     <View style={styles.container}>
+//       <View style={styles.textcontainer}>
+//         <Text style={styles.textgreet}>Mi Perfil</Text>
+//       </View>
+//       <View style={styles.profileInfoContainer}>
+//         <View style={styles.profileImageContainer}>
+//           <TouchableOpacity style={styles.editButton}>
+//             <Image source={editpic} style={styles.editIcon} />
+//           </TouchableOpacity>
+//         </View>
+//         <View style={styles.profileTextContainer}>
+//           <Text style={styles.textprof}>{userData?.username}, {userData?.age || 'Edad sin Definir'}</Text>
+//           <Text style={styles.textemail}>{userData.email}</Text>
+//         </View>
+//       </View>
 
-      {whichScreen ? (
-        <View>
+//       {whichScreen ? (
+//         <View>
 
-          <ProfileComponent text="Editar Mi Perfil" onClick={() => setWhichScreen(!whichScreen)} />
-          <View style={styles.divider}></View>
-          <View style={styles.textcontainers}>
-            <Text style={styles.textsupp}>Soporte</Text>
-          </View>
-          <ProfileComponent
-            icon="terms"
-            text="Términos y Condiciones"
-            onClick={() => setModalVisible(!modalVisible)}
-          />
-          <ProfileComponent icon="info" text="Acerca de Nosotros" />
-          <View style={styles.profileComponentLogContainer}>
-            <ProfileComponentLog />
-          </View>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              setModalVisible(!modalVisible);
-            }}
-          >
-            <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
-              <ScrollView style={styles.modalContainer}>
-                <View style={styles.modalContent}>
-                  <Text style={styles.textgreet}>Términos y Condiciones</Text>
-                  <Text style={styles.modalText}>
-                    Al usar esta aplicación, aceptas nuestros términos. La app está diseñada para pausas
-                    activas y hábitos saludables, pero no reemplaza el asesoramiento médico. Úsala bajo
-                    tu responsabilidad y consulta a un profesional de la salud antes de cambiar tu
-                    rutina. El contenido puede cambiar sin previo aviso.
-                  </Text>
-                  <Text style={styles.modalText}>
-                    ¡Gracias por tu comprensión y disfruta de una vida más activa y saludable con
-                    nuestra aplicación!
-                  </Text>
-                </View>
-                <Boton title="Cerrar" onPress={() => setModalVisible(!modalVisible)} />
-              </ScrollView>
-            </TouchableWithoutFeedback>
-          </Modal>
+//           <ProfileComponent text="Editar Mi Perfil" onClick={() => setWhichScreen(!whichScreen)} />
+//           <View style={styles.divider}></View>
+//           <View style={styles.textcontainers}>
+//             <Text style={styles.textsupp}>Soporte</Text>
+//           </View>
+//           <ProfileComponent
+//             icon="terms"
+//             text="Términos y Condiciones"
+//             onClick={() => setModalVisible(!modalVisible)}
+//           />
+//           <ProfileComponent icon="info" text="Acerca de Nosotros" />
+//           <View style={styles.profileComponentLogContainer}>
+//             <ProfileComponentLog />
+//           </View>
+//           <Modal
+//             animationType="slide"
+//             transparent={true}
+//             visible={modalVisible}
+//             onRequestClose={() => {
+//               setModalVisible(!modalVisible);
+//             }}
+//           >
+//             <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
+//               <ScrollView style={styles.modalContainer}>
+//                 <View style={styles.modalContent}>
+//                   <Text style={styles.textgreet}>Términos y Condiciones</Text>
+//                   <Text style={styles.modalText}>
+//                     Al usar esta aplicación, aceptas nuestros términos. La app está diseñada para pausas
+//                     activas y hábitos saludables, pero no reemplaza el asesoramiento médico. Úsala bajo
+//                     tu responsabilidad y consulta a un profesional de la salud antes de cambiar tu
+//                     rutina. El contenido puede cambiar sin previo aviso.
+//                   </Text>
+//                   <Text style={styles.modalText}>
+//                     ¡Gracias por tu comprensión y disfruta de una vida más activa y saludable con
+//                     nuestra aplicación!
+//                   </Text>
+//                 </View>
+//                 <Boton title="Cerrar" onPress={() => setModalVisible(!modalVisible)} />
+//               </ScrollView>
+//             </TouchableWithoutFeedback>
+//           </Modal>
 
-        </View>
-      ) : (
-        <ModifyUser onToggleScreen={() => setWhichScreen(!whichScreen)} />)}
-    </View>
-  );
-}
+//         </View>
+//       ) : (
+//         <ModifyUser onToggleScreen={() => setWhichScreen(!whichScreen)} />)}
+//     </View>
+//   );
+// }
 
-const ProfileComponent = ({
-  text = 'Vacio',
-  icon = 'edit',
-  onClick = () => {
-    console.log('nada');
-  },
-}) => {
-  return (
-    <View style={{ marginTop: 20, width: '80%', alignSelf: 'center' }}>
-      <Shadow distance={10} startColor={'#d0d0d0'} endColor={'#ffffff'} offset={[0, 3]} >
-        <TouchableOpacity
-          onPress={onClick}
-          style={styles.profileComponentContainer}
-        >
-          {icon == 'edit' && <Octicons name="pencil" size={20} color="#09A4B7" />}
-          {icon == 'terms' && (
-            <MaterialCommunityIcons name="file-document-multiple-outline" size={20} color="#09A4B7" />
-          )}
-          {icon == 'info' && <Feather name="lock" size={20} color="#09A4B7" />}
+// const ProfileComponent = ({
+//   text = 'Vacio',
+//   icon = 'edit',
+//   onClick = () => {
+//     console.log('nada');
+//   },
+// }) => {
+//   return (
+//     <View style={{ marginTop: 20, width: '80%', alignSelf: 'center' }}>
+//       <Shadow distance={10} startColor={'#d0d0d0'} endColor={'#ffffff'} offset={[0, 3]} >
+//         <TouchableOpacity
+//           onPress={onClick}
+//           style={styles.profileComponentContainer}
+//         >
+//           {icon == 'edit' && <Octicons name="pencil" size={20} color="#09A4B7" />}
+//           {icon == 'terms' && (
+//             <MaterialCommunityIcons name="file-document-multiple-outline" size={20} color="#09A4B7" />
+//           )}
+//           {icon == 'info' && <Feather name="lock" size={20} color="#09A4B7" />}
 
-          <Text style={styles.profileComponentText}>{text}</Text>
-          <View style={{ flex: 1 }}>
-            <MaterialIcons name="arrow-forward-ios" size={30} color="#67397E" style={{ width: 30, left: '90%' }} />
-          </View>
-        </TouchableOpacity>
-      </Shadow>
-    </View>
-  );
-};
+//           <Text style={styles.profileComponentText}>{text}</Text>
+//           <View style={{ flex: 1 }}>
+//             <MaterialIcons name="arrow-forward-ios" size={30} color="#67397E" style={{ width: 30, left: '90%' }} />
+//           </View>
+//         </TouchableOpacity>
+//       </Shadow>
+//     </View>
+//   );
+// };
 
 
 
