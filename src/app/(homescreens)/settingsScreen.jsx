@@ -1,35 +1,33 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-// import SegmentedControlTab from 'react-native-segmented-control-tab';
-// import { Horarios } from '@/components/settingsComponent/Horarios';
-// import Notifications from '../Notifications';
+import SegmentedControlTab from 'react-native-segmented-control-tab';
+import { Horarios } from '@/components/settingsComponent/Horarios';
+import Notifications from '../Notifications';
 
 export default function ProfilePage() {
-  // const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   return (
-    <View>
-      <Text>Settings</Text>
-    </View>
-    // <View style={styles.container}>
-    //   <View style={styles.segmented}>
-    //     <SegmentedControlTab
-    //       values={['Horarios', 'Notificaciones']}
-    //       selectedIndex={selectedIndex}
-    //       onTabPress={(index) => setSelectedIndex(index)}
-    //       activeTabStyle={styles.activeTab}
-    //       tabStyle={styles.tab}
-    //       tabTextStyle={styles.tabText}
-    //       activeTabTextStyle={styles.activeTabText}
-    //       borderRadius={16}
-    //     />
-    //   </View>
-    //   <View style={{ width: '100%', height: '100%' }}>
-    //    { selectedIndex===0?
-    //     <Horarios />:
-    //     <Notifications/>}
-    //   </View>
+
+    <View style={styles.container}>
+      <View style={styles.segmented}>
+        <SegmentedControlTab
+          values={['Horarios', 'Notificaciones']}
+          selectedIndex={selectedIndex}
+          onTabPress={(index) => setSelectedIndex(index)}
+          activeTabStyle={styles.activeTab}
+          tabStyle={styles.tab}
+          tabTextStyle={styles.tabText}
+          activeTabTextStyle={styles.activeTabText}
+          borderRadius={16}
+        />
+      </View>
+      <View style={{ width: '100%', height: '100%' }}>
+       { selectedIndex===0?
+        <Horarios />:
+        <Notifications/>}
+      </View>
       
-    // </View>
+    </View>
   );
 }
 
