@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
   },
   whiteText: {
     color: 'white',
-    fontFamily: 'montserrat_regular'
+    // fontFamily: 'montserrat_regular'
   },
   todayContainer: {
     backgroundColor: '#E1F4EF',
