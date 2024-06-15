@@ -51,6 +51,7 @@
     "react-native-screens": "~3.29.0",
     "react-native-segmented-control-tab": "^4.0.0",
     "react-native-shadow-2": "^7.0.8",
+    "react-native-svg": "^15.3.0",
     "react-native-swiper-flatlist": "^3.2.3",
     "react-native-web": "~0.19.6",
     "react-native-wheel-scrollview-picker": "^2.0.4",
