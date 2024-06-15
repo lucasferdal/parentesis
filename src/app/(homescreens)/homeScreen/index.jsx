@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-// import { Feather } from '@expo/vector-icons';
-// import OpcionHome, { GridHome, Col, Row } from '@/ui/OpcionHome';
-// import { useRouter, Redirect } from 'expo-router';
-// import { useOnboarding } from '@/storages/authstore';
-// import { tomarTotalMedallas } from '@/services/MedalsServices';
-// import { UserInformation } from '@/services/UserData';
+import { Feather } from '@expo/vector-icons';
+import OpcionHome, { GridHome, Col, Row } from '@/ui/OpcionHome';
+import { useRouter, Redirect } from 'expo-router';
+import { useOnboarding } from '@/storages/authstore';
+import { tomarTotalMedallas } from '@/services/MedalsServices';
+import { UserInformation } from '@/services/UserData';
 
 function HomeScreen() {
   return (
