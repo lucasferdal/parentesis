@@ -12,7 +12,7 @@ function HomeScreen() {
   // const [username, setUsername] = useState('...');
   // const [hours, setHours] = useState(4);
   // const [medallas, setMedallas] = useState(0);
-  // const onboarding = useOnboarding((state) => state.onboarding);
+  const onboarding = useOnboarding((state) => state.onboarding);
 
   // useEffect(() => {
   //   async function fetchMedallas() {
@@ -25,9 +25,9 @@ function HomeScreen() {
   //   fetchMedallas();
   // }, []);
 
-  // if (onboarding) {
-  //   return <Redirect href={'../../initialLogin'}></Redirect>;
-  // }
+  if (onboarding) {
+    return <Redirect href={'../../initialLogin'}></Redirect>;
+  }
   return (
     <View style={style.container}>
       <View style={style.textcontainer}>
