@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import OpcionHome, { GridHome, Col, Row } from '@/ui/OpcionHome';
 import { useRouter, Redirect } from 'expo-router';
-import { useOnboarding } from '@/storages/authstore';
+import { useOnboarding } from '../../../storages/authstore';
 import { tomarTotalMedallas } from '@/services/MedalsServices';
 import { UserInformation } from '@/services/UserData';
 
@@ -26,7 +26,7 @@ function HomeScreen() {
   // }, []);
 
   if (onboarding) {
-    return <Redirect href={'../../initialLogin'}></Redirect>;
+    return <Redirect href={'initialLogin'}></Redirect>;
   }
   return (
     <View style={style.container}>
