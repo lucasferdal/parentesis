@@ -8,46 +8,46 @@ import { tomarTotalMedallas } from '@/services/MedalsServices';
 import { UserInformation } from '@/services/UserData';
 
 function HomeScreen() {
-
   const router = useRouter();
-  const [username, setUsername] = useState('...');
-  const [hours, setHours] = useState(4);
-  const [medallas, setMedallas] = useState(0);
-  const onboarding = useOnboarding((state) => state.onboarding);
+  // const [username, setUsername] = useState('...');
+  // const [hours, setHours] = useState(4);
+  // const [medallas, setMedallas] = useState(0);
+  // const onboarding = useOnboarding((state) => state.onboarding);
 
-  useEffect(() => {
-    async function fetchMedallas() {
-      const totalMedallas = await tomarTotalMedallas();
-      const getUsername = await UserInformation();
+  // useEffect(() => {
+  //   async function fetchMedallas() {
+  //     const totalMedallas = await tomarTotalMedallas();
+  //     const getUsername = await UserInformation();
 
-      setMedallas(totalMedallas);
-      setUsername(getUsername?.name.substring(0, getUsername?.name.indexOf(' ')));
-    }
-    fetchMedallas();
-  }, []);
+  //     setMedallas(totalMedallas);
+  //     setUsername(getUsername?.name.substring(0, getUsername?.name.indexOf(' ')));
+  //   }
+  //   fetchMedallas();
+  // }, []);
 
-  if (onboarding) {
-    return <Redirect href={'../../initialLogin'}></Redirect>;
-  }
+  // if (onboarding) {
+  //   return <Redirect href={'../../initialLogin'}></Redirect>;
+  // }
   return (
     <View style={style.container}>
       <View style={style.textcontainer}>
-        <Text style={style.textgreet}>¡Hola {username}!</Text>
+        {/* <Text style={style.textgreet}>¡Hola {username}!</Text> */}
       </View>
       <View style={style.statcontainer}>
-        <Text style={style.textstat}>
+        {/* <Text style={style.textstat}>
           ¡Llevas <Text style={{ 
             // fontFamily: 'montserrat_semibold' 
             }}>{hours} horas</Text> frente a
           la pantalla!
-        </Text>
+        </Text> */}
         <View style={{ display: 'flex', flexDirection: 'row', gap: 3, bottom: 14 }}>
           <Feather name="award" size={24} color={'#F78764'} style={{ alignSelf: 'flex-end' }} />
           <Text style={{ 
             // fontFamily: 'montserrat_semibold',
              fontSize: 16, color: '#6F6E6E' 
              }}>
-            {medallas}
+              10
+            {/* {medallas} */}
           </Text>
         </View>
       </View>
