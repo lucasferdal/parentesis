@@ -1,9 +1,14 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet, View, Text, ScrollView, Image } from 'react-native';
-import { corporal, fatiga, estres, visual } from '../assets';
+import { corporal, fatiga, estres, visual } from '@/assets';
+import { Asset, useAssets } from 'expo-asset';
+
 function OpcionHome({ text = 'Vacio', onClick = () => {} }) {
-  let icon =
-    text == 'Corporal' ? corporal : text == 'Visual' ? visual : text == 'Estrés' ? estres : fatiga;
+  const [assets, error] = useAssets([corporal, fatiga, estres, visual]);
+
+  let icon = 
+  text == 'Corporal' ? (assets ? assets[0] : null) : text == 'Visual' ? (assets ? assets[1] : null) : text == 'Estrés' ? (assets ? assets[2] : null) : (assets ? assets[3] : null);
+
   return (
     <TouchableOpacity onPress={onClick} style={[style.item]}>
       <View
@@ -22,7 +27,7 @@ function OpcionHome({ text = 'Vacio', onClick = () => {} }) {
             borderRadius: 10,
           }}
           source={icon}
-        ></Image>
+        />
         <View
           style={{
             backgroundColor: 'rgba(255, 255, 255, .8)',

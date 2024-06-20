@@ -14,6 +14,8 @@ function HomeScreen() {
   const [medallas, setMedallas] = useState(0);
   // const onboarding = useOnboarding((state) => state.onboarding);
 
+  // lo que causa el error de 'element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined' parece ser que es el import del onboarding, no lo he podido solucionar, pero intentare avanzar con lo demas y tratarde de verlo luego
+
   useEffect(() => {
     async function fetchMedallas() {
       const totalMedallas = await tomarTotalMedallas();
@@ -28,6 +30,7 @@ function HomeScreen() {
   // if (onboarding) {
   //   return <Redirect href={'../../initialLogin'}></Redirect>;
   // }
+  
   return (
     <View style={style.container}>
       <View style={style.textcontainer}>

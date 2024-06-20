@@ -1,6 +1,6 @@
 {
   "expo": {
-    "scheme": "client",
+    "scheme": "parentesis",
     "userInterfaceStyle": "automatic",
     "orientation": "default",
     "web": {
@@ -33,9 +33,18 @@
           ]
         }
       ],
+      [
+        "expo-asset",
+        {
+          "assets": [
+            "./src/assets/resources/corporal.jpg",
+            "./src/assets"
+          ]
+        }
+      ],
       "expo-font"
     ],
-    "name": "client",
+    "name": "parentesis",
     "slug": "parentesis",
     "extra": {
       "router": {

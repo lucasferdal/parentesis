@@ -1,9 +1,13 @@
 import { Tabs } from 'expo-router/tabs';
 import { Feather, FontAwesome5 } from '@expo/vector-icons';
 import { Image } from 'react-native';
-import logo from '../../assets/icons/logo.png';
+import logo from '@/assets/icons/logo.png';
+import { useAssets } from 'expo-asset'
 
 export default function AppLayout() {
+
+  const [assets, error] = useAssets([logo])
+
   return (
     <Tabs
       screenOptions={{
@@ -13,7 +17,7 @@ export default function AppLayout() {
           fontSize: 16,
         },
         headerTitle: (props) => (
-          <Image style={{ width: 200, height: 27 }} source={logo} resizeMode="contain" />
+          <Image style={{ width: 200, height: 27 }} source={assets ? assets[0] : null} resizeMode="contain" />
         ),
         headerTitleStyle: { textAlign: 'center', alignSelf: 'center' },
         headerTitleAlign: 'center',

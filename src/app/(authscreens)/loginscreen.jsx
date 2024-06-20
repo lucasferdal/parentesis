@@ -19,8 +19,11 @@ import * as Yup from 'yup';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import { Ionicons } from '@expo/vector-icons';
 import { logo, parentesis } from '../../assets/icons';
+import { useAssets } from 'expo-asset';
 
 const Auth = () => {
+  const [assets] = useAssets([logo, parentesis]);
+
   const SigninSchema = Yup.object().shape({
     email: Yup.string().email('Email invalido').required('Requerido'),
     password: Yup.string().min(6, 'Muy corto!').max(50, 'Muy largo!').required('Requerido'),
@@ -66,8 +69,8 @@ const Auth = () => {
             justifyContent: 'center',
           }}
         >
-          <Image style={{ resizeMode: 'contain', width: 130, height: 90 }} source={logo} />
-          <Image style={{ resizeMode: 'contain', width: 150 }} source={parentesis} />
+          <Image style={{ resizeMode: 'contain', width: 130, height: 90 }} source={assets ? assets[0] : null} />
+          <Image style={{ resizeMode: 'contain', width: 150 }} source={assets ?assets[1] : null} />
         </View>
 
         <Text style={styles.titulo}>Tu bienestar frente a la pantalla</Text>
